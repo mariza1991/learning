@@ -40,10 +40,10 @@ public class SecondTest extends BaseTest {
         driver.get("http://blazedemo.com/index.php");
 
         //choose flight
-        WebElement selectFrom = driver.findElement(By.xpath("//*/select[@name='fromPort']"));
+        WebElement selectFrom = driver.findElement(By.cssSelector("[name='fromPort']"));
         Select select = new Select(selectFrom);
         select.selectByValue(from);
-        WebElement selectTo = driver.findElement(By.xpath("//*/select[@name='toPort']"));
+        WebElement selectTo = driver.findElement(By.cssSelector("[name='toPort']"));
         Select selectNext = new Select(selectTo);
         selectNext.selectByValue(to);
         driver.findElement(By.cssSelector("input.btn.btn-primary")).click();
@@ -51,7 +51,7 @@ public class SecondTest extends BaseTest {
         //check options header
         wait.until(ExpectedConditions.titleIs("BlazeDemo - reserve"));
         String expectedHeader = "Flights from " + from + " to " + to + ":";
-        WebElement actualHeader = driver.findElement(By.xpath("//h3"));
+        WebElement actualHeader = driver.findElement(By.cssSelector("h3"));
         assertEquals(actualHeader.getText(), expectedHeader);
 
         //choose random option
@@ -95,12 +95,12 @@ public class SecondTest extends BaseTest {
 
         //check final page
         wait.until(ExpectedConditions.titleIs("BlazeDemo Confirmation"));
-        wait.until(ExpectedConditions.textToBePresentInElement(By.xpath("//h1"), "Thank you for your purchase today!"));
+        wait.until(ExpectedConditions.textToBePresentInElement(By.cssSelector("h1"), "Thank you for your purchase today!"));
 
-        assertTrue(driver.findElement(By.xpath("//table//tr[1]/td[2]")).isDisplayed());
-        assertTrue(driver.findElement(By.xpath("//table//tr[2]/td[2]")).isDisplayed());
-        assertEquals(driver.findElement(By.xpath("//table//tr[3]/td[2]")).getText(), "USD");
-        assertEquals(driver.findElement(By.xpath("//table//tr[4]/td[2]")).getText(), getCardNumber(data[5]));
+        assertTrue(driver.findElement(By.cssSelector("tbody tr:nth-child(1) > td:nth-child(2)")).isDisplayed());
+        assertTrue(driver.findElement(By.cssSelector("tbody tr:nth-child(2) > td:nth-child(2)")).isDisplayed());
+        assertEquals(driver.findElement(By.cssSelector("tbody tr:nth-child(3) > td:nth-child(2)")).getText(), "USD");
+        assertEquals(driver.findElement(By.cssSelector("tbody tr:nth-child(4) > td:nth-child(2)")).getText(), getCardNumber(data[5]));
 
         /** These two checks found a bug - pre-filled fields "#creditCardMonth", "#creditCardYear"
          * from http://blazedemo.com/purchase.php page should clean after user clicks on them. They didn't
