@@ -1,20 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1" verbose="5" >
+<suite name="Suite1" verbose="1" >
     <test name="First" >
         <classes>
-            <class name="tests.firstHW.FirstTest">
-                <methods>
-                    <include name="test1"></include>
-                    <exclude name="test2"></exclude>
-                </methods>
+            <class name="tests.newTests.pageObject.BlazeDemoTest">
             </class>
         </classes>
     </test>
 
     <test name="Homework">
         <classes>
-            <class name="tests.firstHW.HomeworkTest"/>
+            <class name="tests.oldTests.firstHW.HomeworkTest"/>
         </classes>
     </test>
 </suite>
