@@ -2,6 +2,7 @@ package tests.newTests.pageObject;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import tests.newTests.BaseTest;
 import tests.newTests.pageObject.pages.Confirmation;
 import tests.newTests.pageObject.pages.Index;
 import tests.newTests.pageObject.pages.Purchase;
@@ -49,6 +50,7 @@ public class BlazeDemoTest extends BaseTest {
 
     @DataProvider(name = "testData")
     public Object[][] dataProvider(){
-        return new Object[][]{{"Portland", "Rome"}, {"Paris", "Berlin"}};
+        return new Object[][]{{"Portland", "Rome"}};
     }
+    //, {"Paris", "Berlin"}
 }

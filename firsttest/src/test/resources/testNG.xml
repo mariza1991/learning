@@ -10,7 +10,7 @@
 
     <test name="Homework">
         <classes>
-            <class name="tests.oldTests.firstHW.HomeworkTest"/>
+            <class name="tests.oldTests.firstHW.SomeTest"/>
         </classes>
     </test>
 </suite>

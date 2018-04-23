@@ -8,27 +8,44 @@ import org.openqa.selenium.opera.OperaOptions;
 
 public class WebdriverManager {
 
-    static WebDriver driver;
+    private static WebDriver driver;
 
     public static WebDriver getInstance(){
         if (driver == null) {
-            driver = new ChromeDriver();
+            createChromeDriver();
         }
         return driver;
     }
 
     public static WebDriver getDriver(String driverUserChoice) {
-        if (driverUserChoice.equals("mozilla")) {
-            driver = new FirefoxDriver();
-        } else if (driverUserChoice.equals("opera")) {
-            OperaOptions oo = new OperaOptions();
-            oo.setBinary("E:/Programms/opera/52.0.2871.64/opera.exe");
-            driver = new OperaDriver();
-        } else if (driverUserChoice.equals("chrome")) {
-            driver = new ChromeDriver();
-        } else {
-            driver = getInstance();
+        if (driver == null) {
+            if (driverUserChoice.equals("mozilla")) {
+                createFirefoxDriver();
+            } else if (driverUserChoice.equals("opera")) {
+                createOperaDriver();
+            } else if (driverUserChoice.equals("chrome")) {
+                createChromeDriver();
+            } else {
+                createChromeDriver();
+            }
         }
+        return driver;
+    }
+
+    private static WebDriver createChromeDriver(){
+        driver = new ChromeDriver();
+        return driver;
+    }
+
+    private static WebDriver createOperaDriver(){
+        OperaOptions oo = new OperaOptions();
+        oo.setBinary("E:/Programms/opera/52.0.2871.64/opera.exe");
+        driver = new OperaDriver();
+        return driver;
+    }
+
+    private static WebDriver createFirefoxDriver(){
+        driver = new FirefoxDriver();
         return driver;
     }
 }
