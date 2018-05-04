@@ -18,6 +18,6 @@ public class EmailBlock implements IComponent {
     }
 
     public WebElement getRootElement(){
-        return getDriver("").findElement(EMAIL_BLOCK);
+        return getDriver().findElement(EMAIL_BLOCK);
     }
 }

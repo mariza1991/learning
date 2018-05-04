@@ -1,6 +1,6 @@
 package yandex.pages.search;
 
-import yandex.pages.BasePage;
+import basePage.BasePage;
 import yandex.pages.passport.PassportPage;
 import yandex.pages.search.components.EmailBlock;
 

@@ -29,6 +29,6 @@ public class ContentBlock implements IComponent {
     }
 
     public WebElement getRootElement() {
-        return getDriver("").findElement(CONTENT_BLOCK);
+        return getDriver().findElement(CONTENT_BLOCK);
     }
 }

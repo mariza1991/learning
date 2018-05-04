@@ -1,6 +1,6 @@
 package yandex.pages.passport;
 
-import yandex.pages.BasePage;
+import basePage.BasePage;
 import yandex.pages.passport.components.ContentBlock;
 
 public class PassportPage extends BasePage {

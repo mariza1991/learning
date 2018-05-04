@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import static utils.WebdriverManager.getDriver;
-import static utils.WebdriverManager.getInstance;
+import static utils.WebdriverManager.getDriver;
 
 public class LoginBlock implements IComponent {
 
@@ -21,10 +21,10 @@ public class LoginBlock implements IComponent {
 
     private final static By LOGIN_BUTTON = By.cssSelector("[class*='btn']");
 
-    public void moveMouthToLoginBtn(){
-        Actions moveMouthToLoginBtn = new Actions(getInstance());
+    public void moveMouseToLoginBtn(){
+        Actions moveMouseToLoginBtn = new Actions(getDriver());
         WebElement loginBtn = getRootElement().findElement(LOGIN_BUTTON);
-        moveMouthToLoginBtn.moveToElement(loginBtn).perform();
+        moveMouseToLoginBtn.moveToElement(loginBtn).perform();
     }
 
     public Dimension defineLoginBtnSize(){
@@ -38,6 +38,6 @@ public class LoginBlock implements IComponent {
     }
 
     public WebElement getRootElement() {
-        return getDriver("opera").findElement(LOGIN_BLOCK);
+        return getDriver().findElement(LOGIN_BLOCK);
     }
 }

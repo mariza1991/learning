@@ -9,9 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <suite>testNG</suite>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -51,6 +50,7 @@
                         <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver.exe</webdriver.chrome.driver>
                         <webdriver.gecko.driver>${project.basedir}/lib/gecko/geckodriver.exe</webdriver.gecko.driver>
                         <webdriver.opera.driver>${project.basedir}/lib/opera/operadriver.exe</webdriver.opera.driver>
+
                         <suite>${suite}</suite>
                     </systemPropertyVariables>
                 </configuration>

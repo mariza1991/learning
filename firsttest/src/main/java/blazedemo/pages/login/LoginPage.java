@@ -11,13 +11,13 @@ public class LoginPage extends BasePage {
 
     public String getLoginHoverStateColor(){
         loginBlock = new LoginBlock();
-        loginBlock.moveMouthToLoginBtn();
+        loginBlock.moveMouseToLoginBtn();
         return loginBlock.defineLoginBtnColor();
     }
 
     public Dimension getLoginHoverStateSize(){
         loginBlock = new LoginBlock();
-        loginBlock.moveMouthToLoginBtn();
+        loginBlock.moveMouseToLoginBtn();
         return loginBlock.defineLoginBtnSize();
     }
 
