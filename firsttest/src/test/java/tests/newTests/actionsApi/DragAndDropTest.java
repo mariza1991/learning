@@ -1,10 +1,16 @@
 package tests.newTests.actionsApi;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import tests.newTests.BaseTest;
+
+import java.io.File;
+import java.io.IOException;
 
 public class DragAndDropTest extends BaseTest {
 

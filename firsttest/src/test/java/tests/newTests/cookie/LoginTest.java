@@ -2,14 +2,18 @@ package tests.newTests.cookie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import tests.TestListener;
 import tests.newTests.BaseTest;
 import helpers.demo99.Authorization;
 
 import java.util.Set;
 
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
+@Listeners({TestListener.class})
 public class LoginTest extends BaseTest {
 
     private Set<Cookie> cookies;
@@ -22,6 +26,7 @@ public class LoginTest extends BaseTest {
         driver.findElement(By.name("password")).sendKeys("password");
         driver.findElement(By.name("submit")).click();
         cookies = driver.manage().getCookies();
+        assertTrue(false);
         assertFalse(cookies.isEmpty());
     }
 

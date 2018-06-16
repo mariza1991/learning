@@ -8,7 +8,7 @@ import static utils.WebdriverManager.getDriver;
 
 public class EmailBlock implements IComponent {
 
-    private final static By EMAIL_BLOCK = By.xpath("//div[role='form']");
+    private final static By EMAIL_BLOCK = By.xpath("//div[@role='form']");
 
     private final static By ENTER_TO_EMAIL_BUTTON = By.xpath("./a[contains(@class,'login-enter')]");
 

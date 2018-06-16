@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite TestNG" parallel="classes" >
+    <listeners>
+        <listener class-name = "tests.newTests.testNGFeatures.listeners.TestAnnotationListener"/>
+    </listeners>
+    <test name="testNG features" >
+        <classes>
+            <class name="tests.newTests.testNGFeatures.tests.FirstTest">
+            </class>
+        </classes>
+    </test>
+
+</suite>
