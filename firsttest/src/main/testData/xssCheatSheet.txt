@@ -1,0 +1,3 @@
+<scripr>alert("xx");</script>
+<scripr>alert("some text test me");</script>
+2
