@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>FirstTest</groupId>
@@ -26,13 +27,6 @@
             <artifactId>testng</artifactId>
             <version>6.14.2</version>
             <scope>src</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>4.11.4</version>
         </dependency>
 
         <dependency>
@@ -77,15 +71,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/src/test/resources/${suite}.xml</suiteXmlFile>
-                    </suiteXmlFiles>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver.exe</webdriver.chrome.driver>
                         <webdriver.gecko.driver>${project.basedir}/lib/gecko/geckodriver.exe</webdriver.gecko.driver>
                         <webdriver.opera.driver>${project.basedir}/lib/opera/operadriver.exe</webdriver.opera.driver>
-
-                        <suite>${suite}</suite>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

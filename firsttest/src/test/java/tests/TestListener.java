@@ -44,6 +44,15 @@ public class TestListener implements ITestListener {
             FileUtils.copyFile(srcFile, new File(PATH_TO_SCRENSHOT + "screenshot." + reportDate + ".png"));
         } catch (IOException e) {}
 
+
+        Date failedTime = new Date(iTestResult.getEndMillis());
+        logger.info("---------------------------------------------\n Test failed: "+ failedTime + iTestResult.getTestClass());
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(stringWriter);
+        Throwable cause = iTestResult.getThrowable();
+        cause.printStackTrace(printWriter);
+        logger.info("----------------------------------------------\n Cause: "+ stringWriter.getBuffer().toString());
+
         /**
         iTestResult.getEndMillis();
         logger.error("STRANGE TEXT " + iTestResult.getTestName() + iTestResult.getTestClass());

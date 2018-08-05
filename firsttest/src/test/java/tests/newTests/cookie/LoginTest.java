@@ -13,7 +13,7 @@ import java.util.Set;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-@Listeners({TestListener.class})
+@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
     private Set<Cookie> cookies;

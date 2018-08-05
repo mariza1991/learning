@@ -1,9 +1,6 @@
 package selenide;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.conditions.Text;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

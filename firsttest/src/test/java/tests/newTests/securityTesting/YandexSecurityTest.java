@@ -8,6 +8,8 @@ import utils.FileReader;
 import yandex.pages.passport.PassportPage;
 import yandex.pages.search.YandexSearchPage;
 
+import java.io.IOException;
+
 public class YandexSecurityTest extends BaseTest {
 
     @Test(dataProvider = "xssTests")
@@ -20,20 +22,20 @@ public class YandexSecurityTest extends BaseTest {
     }
 
     @DataProvider(name = "xssTests")
-    protected Object[][] xssDataProvider(){
+    protected Object[][] xssDataProvider() throws IOException {
         //load from file + read string ?
 
-/**
-        String[] test = XssCheatSheet.myArr;
+    //    Object test = FileReader.readFromFile("src/main/testData/xssCheatSheet.txt");
+        String[] lines = XssCheatSheet.myArr;
 
-        Object[][] cheatsheet = new Object[][]{{"email", line}};
+        Object[][] cheatsheet = new Object[][]{{"email", ""}};
         int count = 0;
-        for (String line: test){
-            cheatsheet[count][0]=line;
+        for (String line: lines){
+            cheatsheet[0][count]=line;
             count++;
-        }*/
-    //    return cheatsheet;
+        }
+        return cheatsheet;
 
-        return new Object[][]{{"email", "<scripr>alert(\"xx\");</script>"}, {"email", "<scripr>alert(\"some text test me\");</script>"}};
+    //    return new Object[][]{{"email", "<scripr>alert(\"xx\");</script>"}};
     }
 }

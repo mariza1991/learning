@@ -20,7 +20,7 @@ public class BaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeTest(){
-        addListener(new EventListener());
+    //    addListener(new EventListener());
         driver = WebdriverManager.getDriver();
         wait = new WebDriverWait(driver, timeout);
     }

@@ -13,7 +13,6 @@ public class YandexTest extends BaseTest {
     @Test
     public void test(){
         driver.get("https://www.yandex.ru/");
-        assertTrue(false);
         YandexSearchPage searchPage = new YandexSearchPage();
         PassportPage passpotPage = searchPage.clickOnEmailBlock();
         String aactualColor = passpotPage.getSignInBackgroundColor();

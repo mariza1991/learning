@@ -6,7 +6,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.internal.annotations.IListeners;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +14,8 @@ import java.util.Date;
 import static utils.WebdriverManager.getDriver;
 
 public class TestListener implements ITestListener {
+
+    private static final String PATH_TO_SCRENSHOT = "target/output/";
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -31,7 +32,7 @@ public class TestListener implements ITestListener {
         Date date = new Date();
         File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(srcFile, new File("screen" + date + ".png"));
+            FileUtils.copyFile(srcFile, new File(PATH_TO_SCRENSHOT + "screen" + date + ".png"));
         } catch (IOException e) {}
     }
 
