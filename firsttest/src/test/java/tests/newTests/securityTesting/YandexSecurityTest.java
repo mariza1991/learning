@@ -28,12 +28,13 @@ public class YandexSecurityTest extends BaseTest {
     //    Object test = FileReader.readFromFile("src/main/testData/xssCheatSheet.txt");
         String[] lines = XssCheatSheet.myArr;
 
-        Object[][] cheatsheet = new Object[][]{{"email", ""}};
+        Object[][] cheatsheet = new Object[lines.length][2];
         int count = 0;
-        for (String line: lines){
-            cheatsheet[0][count]=line;
-            count++;
-        }
+            for (String line : lines) {
+                cheatsheet[count][0] = line;
+                count++;
+            }
+        
         return cheatsheet;
 
     //    return new Object[][]{{"email", "<scripr>alert(\"xx\");</script>"}};
