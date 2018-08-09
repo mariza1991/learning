@@ -14,6 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 
 public class WebdriverManager {
@@ -50,6 +51,9 @@ public class WebdriverManager {
                 case "chrome-remote":
                     createChromeRemote();
                     break;
+                case "chrome-selenoid":
+                    createSelenoidRemote();
+                    break;
                 case "ie":
                     createIEDriver(); //not working
                     break;
@@ -77,6 +81,23 @@ public class WebdriverManager {
             driver = new RemoteWebDriver(new URL("http://192.168.0.3:4444/wd/hub"), //my hub address
                     DesiredCapabilities.chrome());
             driver.manage().window().maximize();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return driver;
+    }
+
+    private static WebDriver createSelenoidRemote(){
+        try {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setBrowserName("chrome");
+            capabilities.setVersion("latest");
+        //    capabilities.setCapability("enableVNC", "true");
+
+            driver = new RemoteWebDriver(
+                    URI.create("http://localhost:4444/wd/hub").toURL(),
+                    capabilities
+            );
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

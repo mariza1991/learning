@@ -71,6 +71,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
+                    <threadCount>2</threadCount>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver.exe</webdriver.chrome.driver>
                         <webdriver.gecko.driver>${project.basedir}/lib/gecko/geckodriver.exe</webdriver.gecko.driver>

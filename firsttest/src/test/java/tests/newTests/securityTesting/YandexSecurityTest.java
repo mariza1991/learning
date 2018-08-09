@@ -34,7 +34,7 @@ public class YandexSecurityTest extends BaseTest {
                 cheatsheet[count][0] = line;
                 count++;
             }
-        
+
         return cheatsheet;
 
     //    return new Object[][]{{"email", "<scripr>alert(\"xx\");</script>"}};
